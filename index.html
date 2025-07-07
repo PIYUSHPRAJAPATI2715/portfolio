@@ -56,7 +56,6 @@
       border:5px solid var(--accent);box-shadow:0 0 25px var(--accent-light);
       animation:float 6s ease-in-out infinite
     }
-    @media(min-width:1000px){.hero-img{width:200px;height:200px}}
     @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
     #hero h1{font-size:3.25rem;font-weight:800;margin:25px 0 6px}
     #hero h1 span{color:var(--accent)}
@@ -68,6 +67,7 @@
       color:var(--accent);font-weight:600;text-decoration:none;transition:.3s
     }
     .btn-primary:hover{background:var(--accent);color:var(--bg);transform:translateY(-3px)}
+    @media(max-width:768px){#hero h1{font-size:2.35rem}}
 
     /* ---------- About ---------- */
     #about{background:var(--card);border-top:1px solid #222}
@@ -80,18 +80,18 @@
     .chips{display:flex;flex-wrap:wrap;gap:18px;justify-content:center}
     .chip{
       padding:11px 22px;border-radius:40px;background:#1e1e1e;
-      border:1px solid var(--accent);font-size:.9rem;transition:background .3s,color .3s
+      border:1px solid var(--accent);font-size:.9rem;transition:.3s
     }
     .chip:hover{background:var(--accent);color:var(--bg)}
 
-    /* ---------- Projects & Cards ---------- */
+    /* ---------- Projects ---------- */
     #projects,#experience,#contact{background:var(--card)}
     .projects-grid{
       display:grid;gap:45px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))
     }
     .card{
       background:#1b1b1b;border-radius:20px;padding:30px 26px;
-      box-shadow:0 4px 22px rgba(0,0,0,.55);transition:transform .4s,box-shadow .4s
+      box-shadow:0 4px 22px rgba(0,0,0,.55);transition:.4s
     }
     .card:hover{transform:translateY(-8px);box-shadow:0 8px 28px rgba(0,0,0,.75)}
     .card h3{margin-bottom:12px;color:var(--accent)}
@@ -108,18 +108,24 @@
     .t-item h4{color:var(--accent)}
 
     /* ---------- Contact ---------- */
+    .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:40px}
+    .contact-links a{
+      display:block;margin-bottom:16px;color:var(--text);text-decoration:none;font-size:1.05rem;transition:.3s
+    }
+    .contact-links a:hover{color:var(--accent-light)}
+    .contact-links i{margin-right:10px;color:var(--accent)}
     #contact input,#contact textarea{
       width:100%;padding:15px;border-radius:10px;border:1px solid #333;
-      background:#0f0f0f;color:var(--text)
+      background:#0f0f0f;color:var(--text);margin-bottom:16px
     }
     #contact button{
-      padding:13px 30px;border:none;border-radius:50px;
-      background:var(--accent);color:var(--bg);font-weight:600;cursor:pointer
+      padding:13px 30px;border:none;border-radius:50px;background:var(--accent);
+      color:var(--bg);font-weight:600;cursor:pointer;transition:.3s
     }
+    #contact button:hover{transform:translateY(-2px);background:var(--accent-light)}
 
     /* ---------- Footer ---------- */
     footer{text-align:center;padding:24px 8%;background:#000;border-top:1px solid #222;color:#aaaaaa}
-    @media(max-width:768px){#hero h1{font-size:2.35rem}}
   </style>
 </head>
 
@@ -143,7 +149,9 @@
     <img src="assets/profil.png" alt="Piyush Prajapati" class="hero-img animate__animated animate__fadeIn">
     <h1 class="animate__animated animate__fadeInUp">Hi, I'm <span>Piyush Prajapati</span></h1>
     <h2 class="typed-text animate__animated animate__fadeInUp"></h2>
-    <p class="animate__animated animate__fadeInUp">Mobile Application &amp; Full‑Stack Web Developer with 4+ years of experience crafting high‑performance apps and seamless digital experiences.</p>
+    <p class="animate__animated animate__fadeInUp">
+      Mobile Application &amp; Full‑Stack Web Developer with 4+ years of experience crafting high‑performance apps and seamless digital experiences.
+    </p>
     <a href="#contact" class="btn-primary animate__animated animate__fadeInUp">Hire Me</a>
   </section>
 
@@ -178,8 +186,8 @@
   <section id="projects" data-aos="fade-up">
     <h2 class="title">Selected Projects</h2>
     <div class="projects-grid">
-      <div class="card"><h3>Rukmani Sales</h3><p>Snacks, sweets & drinks e-commerce app with Razorpay + WhatsApp API.</p></div>
-      <div class="card"><h3>Posh Rides</h3><p>Cab booking app with real-time features.</p><a href="https://play.google.com/store/apps/details?id=com.app.poshrides" target="_blank">Play Store</a></div>
+      <div class="card"><h3>Rukmani Sales</h3><p>Snacks, sweets & drinks e‑commerce app with Razorpay + WhatsApp API.</p></div>
+      <div class="card"><h3>Posh Rides</h3><p>Cab booking app with real‑time features.</p><a href="https://play.google.com/store/apps/details?id=com.app.poshrides" target="_blank">Play Store</a></div>
       <div class="card"><h3>Shush</h3><p>Private & secure chat application.</p><a href="https://play.google.com/store/apps/details?id=com.shushapp.shush" target="_blank">Play Store</a></div>
       <div class="card"><h3>Direise</h3><p>Professional networking and job app.</p><a href="https://play.google.com/store/apps/details?id=com.dirise.dirisee" target="_blank">Play Store</a></div>
       <div class="card"><h3>Direise Seller</h3><p>Business account platform for Direise.</p><a href="https://play.google.com/store/apps/details?id=com.diriseseller.diriseseller" target="_blank">Play Store</a></div>
@@ -188,7 +196,7 @@
       <div class="card"><h3>Key Vision PRO</h3><p>Security and surveillance mobile management app.</p><a href="https://play.google.com/store/apps/details?id=com.keyvision.KeyVisionPROMobile" target="_blank">Play Store</a></div>
       <div class="card"><h3>Smilezy</h3><p>Healthcare consultation and pharmacy delivery app.</p><a href="https://play.google.com/store/apps/details?id=com.smileszy.smileszy" target="_blank">Play Store</a></div>
       <div class="card"><h3>SCLLP Web</h3><p>Corporate login and admin web dashboard.</p><a href="https://people.scllp.in/#/login" target="_blank">Visit Website</a></div>
-      <div class="card"><h3>Shilergy</h3><p>E-commerce website for wellness products.</p><a href="https://shilergy.com/" target="_blank">Visit Website</a></div>
+      <div class="card"><h3>Shilergy</h3><p>E‑commerce website for wellness products.</p><a href="https://shilergy.com/" target="_blank">Visit Website</a></div>
       <div class="card"><h3>ZipCash</h3><p>Digital payment and lending app.</p><a href="https://play.google.com/store/apps/details?id=com.zipFintech.zipe&hl=en_IN" target="_blank">Play Store</a></div>
     </div>
   </section>
@@ -205,20 +213,20 @@
   <!-- ========= Contact ========= -->
   <section id="contact" data-aos="fade-up">
     <h2 class="title">Let's Work Together</h2>
-    <div class="about-grid" style="gap:40px">
-      <div>
-        <p>Have an idea or project in mind? Drop a message and let's bring it to life!</p>
-        <p><i class="fa-solid fa-envelope"></i> 13prajapatipiyush15@gmail.com</p>
-        <p><i class="fa-solid fa-phone"></i> +91 95493 48495</p>
-        <p><i class="fa-solid fa-location-dot"></i> Jaipur, India</p>
+    <div class="contact-grid">
+      <!-- Contact Links -->
+      <div class="contact-links">
+        <a href="mailto:13prajapatipiyush15@gmail.com?subject=Hello%20Piyush"><i class="fa-solid fa-envelope"></i> 13prajapatipiyush15@gmail.com</a>
+        <a href="tel:+919549348495"><i class="fa-solid fa-phone"></i> +91 95493 48495</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Old%20Delhi%20Road%2C%20Shahpura%2C%20Jaipur%20302021" target="_blank"><i class="fa-solid fa-location-dot"></i> Jaipur, India</a>
       </div>
 
       <!-- Contact Form -->
       <form id="contactForm">
-        <input type="text"     name="name"    placeholder="Your Name"    required>
-        <input type="email"    name="email"   placeholder="Your Email"   required>
-        <textarea name="msg"   rows="5"       placeholder="Message"      required></textarea>
-        <button type="submit">Send Message</button>
+        <input type="text"  name="name"  placeholder="Your Name"    required>
+        <input type="email" name="email" placeholder="Your Email"   required>
+        <textarea name="msg" rows="5"   placeholder="Message"      required></textarea>
+        <button type="submit">Send Message via WhatsApp</button>
       </form>
     </div>
   </section>
@@ -233,10 +241,12 @@
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script>
     AOS.init({ once:true, duration:800 });
+
     new Typed('.typed-text',{
       strings:['Flutter Developer','Full‑Stack Dev','Freelancer','Tech Enthusiast'],
       typeSpeed:60,backSpeed:30,backDelay:2000,loop:true
     });
+
     document.getElementById('year').textContent = new Date().getFullYear();
 
     /* === WhatsApp integration === */
@@ -255,7 +265,6 @@
                   `Email%3A%20${email}%0A`+
                   `Message%3A%20${message}`;
       window.open(url,'_blank');
-      /* Optional: reset form */
       this.reset();
     });
   </script>
