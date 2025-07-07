@@ -1,3 +1,5 @@
+<!-- Full HTML with Projects Updated -->
+<!-- Save this as index.html or similar -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,119 +10,103 @@
   <!-- Google Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
-
-  <!-- Animation libs -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
 
-  <!-- ===== STYLE ===== -->
   <style>
-    :root{
-      --accent:#d4af37;            /* Gold */
-      --accent-light:#ffdd80;      /* Light Gold */
-      --bg:#0b0b0b;               /* Almost Black */
-      --card:#111111;             /* Dark Card */
-      --text:#f8f8f8;             /* Near‑White */
+    :root {
+      --accent:#d4af37;
+      --accent-light:#ffdd80;
+      --bg:#0b0b0b;
+      --card:#111111;
+      --text:#f8f8f8;
       --maxW:1200px;
     }
-    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-    html{scroll-behavior:smooth}
-    body{background:var(--bg);color:var(--text);overflow-x:hidden}
-
-    /* ---------- HEADER ---------- */
-    header{
+    *,*::before,*::after {margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+    html {scroll-behavior:smooth}
+    body {background:var(--bg);color:var(--text);overflow-x:hidden}
+    header {
       position:fixed;left:0;right:0;top:0;height:70px;padding:0 8%;
       display:flex;justify-content:space-between;align-items:center;
       background:rgba(0,0,0,.75);backdrop-filter:blur(8px);
       border-bottom:1px solid var(--accent);z-index:1000
     }
-    .logo{font-size:1.7rem;font-weight:800;color:var(--accent)}
-    nav a{
+    .logo {font-size:1.7rem;font-weight:800;color:var(--accent)}
+    nav a {
       margin-left:28px;color:var(--text);text-decoration:none;position:relative;font-weight:500
     }
-    nav a::after{
+    nav a::after {
       content:'';position:absolute;left:0;bottom:-4px;width:0;height:2px;
       background:var(--accent);border-radius:4px;transition:width .3s
     }
-    nav a:hover{color:var(--accent)}
-    nav a:hover::after{width:100%}
-
-    /* ---------- SECTIONS ---------- */
-    section{padding:120px 8% 80px;max-width:var(--maxW);margin:auto;position:relative}
-    .title{text-align:center;font-size:2.6rem;font-weight:700;margin-bottom:70px;color:var(--accent)}
-
-    /* ---------- HERO ---------- */
-    #hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
-    .hero-img{
+    nav a:hover {color:var(--accent)}
+    nav a:hover::after {width:100%}
+    section {padding:120px 8% 80px;max-width:var(--maxW);margin:auto;position:relative}
+    .title {text-align:center;font-size:2.6rem;font-weight:700;margin-bottom:70px;color:var(--accent)}
+    #hero {
+      min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center
+    }
+    .hero-img {
       width:180px;height:180px;border-radius:50%;object-fit:cover;
       border:5px solid var(--accent);box-shadow:0 0 25px var(--accent-light);
       animation:float 6s ease-in-out infinite
     }
-    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
-    #hero h1{font-size:3.25rem;font-weight:800;margin:25px 0 6px}
-    #hero h1 span{color:var(--accent)}
-    .typed-text{color:var(--accent);font-weight:600}
-    #hero p{max-width:680px;margin:22px auto 34px;line-height:1.65}
-    .btn-primary{
+    @keyframes float {0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
+    #hero h1 {font-size:3.25rem;font-weight:800;margin:25px 0 6px}
+    #hero h1 span {color:var(--accent)}
+    .typed-text {color:var(--accent);font-weight:600}
+    #hero p {max-width:680px;margin:22px auto 34px;line-height:1.65}
+    .btn-primary {
       display:inline-block;padding:13px 36px;border-radius:50px;
       background:transparent;border:2px solid var(--accent);
       color:var(--accent);font-weight:600;text-decoration:none;transition:.3s
     }
-    .btn-primary:hover{background:var(--accent);color:var(--bg);transform:translateY(-3px)}
-
-    /* ---------- ABOUT ---------- */
-    #about{background:var(--card);border-top:1px solid #222}
-    .about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:50px;align-items:center}
-    .portrait-wide{
+    .btn-primary:hover {background:var(--accent);color:var(--bg);transform:translateY(-3px)}
+    #about {background:var(--card);border-top:1px solid #222}
+    .about-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:50px;align-items:center}
+    .portrait-wide {
       width:100%;border-radius:16px;border:4px solid var(--accent);
       object-fit:cover;box-shadow:0 0 15px rgba(0,0,0,.4)
     }
-
-    /* ---------- SKILLS ---------- */
-    .chips{display:flex;flex-wrap:wrap;gap:18px;justify-content:center}
-    .chip{
+    .chips {display:flex;flex-wrap:wrap;gap:18px;justify-content:center}
+    .chip {
       padding:11px 22px;border-radius:40px;background:#1e1e1e;
       border:1px solid var(--accent);font-size:.9rem;transition:background .3s,color .3s
     }
-    .chip:hover{background:var(--accent);color:var(--bg)}
-
-    /* ---------- PROJECTS ---------- */
-    #projects,#experience,#contact{background:var(--card)}
-    .projects-grid{display:grid;gap:45px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-    .card{
+    .chip:hover {background:var(--accent);color:var(--bg)}
+    #projects,#experience,#contact {background:var(--card)}
+    .projects-grid {
+      display:grid;gap:45px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))
+    }
+    .card {
       background:#1b1b1b;border-radius:20px;padding:30px 26px;
       box-shadow:0 4px 22px rgba(0,0,0,.55);transition:transform .4s,box-shadow .4s
     }
-    .card:hover{transform:translateY(-8px);box-shadow:0 8px 28px rgba(0,0,0,.75)}
-    .card h3{margin-bottom:12px;color:var(--accent)}
-    .card p{color:#d0d0d0}
-
-    /* ---------- TIMELINE ---------- */
-    .timeline{margin-left:22px;padding-left:22px;position:relative}
-    .timeline::before{content:'';position:absolute;left:0;top:0;width:4px;height:100%;background:var(--accent)}
-    .t-item{margin-bottom:45px;position:relative;color:#d0d0d0}
-    .t-item::before{
+    .card:hover {transform:translateY(-8px);box-shadow:0 8px 28px rgba(0,0,0,.75)}
+    .card h3 {margin-bottom:12px;color:var(--accent)}
+    .card p {color:#d0d0d0}
+    .card a {color:#ffdd80;text-decoration:underline;display:inline-block;margin-top:8px}
+    .timeline {margin-left:22px;padding-left:22px;position:relative}
+    .timeline::before {content:'';position:absolute;left:0;top:0;width:4px;height:100%;background:var(--accent)}
+    .t-item {margin-bottom:45px;position:relative;color:#d0d0d0}
+    .t-item::before {
       content:'';position:absolute;left:-29px;top:5px;width:20px;height:20px;border-radius:50%;background:var(--accent)
     }
-    .t-item h4{color:var(--accent)}
-
-    /* ---------- CONTACT ---------- */
-    #contact input,#contact textarea{
+    .t-item h4 {color:var(--accent)}
+    #contact input,#contact textarea {
       width:100%;padding:15px;border-radius:10px;border:1px solid #333;
       background:#0f0f0f;color:var(--text)
     }
-    #contact button{
+    #contact button {
       padding:13px 30px;border:none;border-radius:50px;
       background:var(--accent);color:var(--bg);font-weight:600;cursor:pointer
     }
-
-    footer{text-align:center;padding:24px 8%;background:#000;border-top:1px solid #222;color:#aaaaaa}
+    footer {text-align:center;padding:24px 8%;background:#000;border-top:1px solid #222;color:#aaaaaa}
     @media(max-width:768px){#hero h1{font-size:2.35rem}}
   </style>
 </head>
 
 <body>
-  <!-- ===== HEADER ===== -->
   <header data-aos="fade-down">
     <div class="logo">Piyush.</div>
     <nav>
@@ -134,77 +120,65 @@
     </nav>
   </header>
 
-  <!-- ===== HERO ===== -->
   <section id="hero">
     <img src="assets/VKG_5049.JPG" alt="Piyush Prajapati" class="hero-img animate__animated animate__fadeIn">
     <h1 class="animate__animated animate__fadeInUp">Hi, I'm <span>Piyush Prajapati</span></h1>
     <h2 class="typed-text animate__animated animate__fadeInUp"></h2>
-    <p class="animate__animated animate__fadeInUp" style="--animate-delay:.2s">
-      Mobile Application &amp; Full‑Stack Web Developer with 4+ years of experience crafting high‑performance apps and seamless digital experiences.
-    </p>
-    <a href="#contact" class="btn-primary animate__animated animate__fadeInUp" style="--animate-delay:.4s">Hire Me</a>
+    <p class="animate__animated animate__fadeInUp">Mobile Application &amp; Full‑Stack Web Developer with 4+ years of experience crafting high‑performance apps and seamless digital experiences.</p>
+    <a href="#contact" class="btn-primary animate__animated animate__fadeInUp">Hire Me</a>
   </section>
 
-  <!-- ===== ABOUT ===== -->
   <section id="about" data-aos="fade-up">
     <h2 class="title">About Me</h2>
     <div class="about-grid">
-    <img src="assets/VKG_5049.JPG" alt="Piyush Prajapati" class="portrait-wide" data-aos="zoom-in" />
- 
-      <div data-aos="fade-left" data-aos-delay="100">
+      <img src="assets/VKG_5049.JPG" alt="Piyush Prajapati" class="portrait-wide" data-aos="zoom-in" />
+      <div data-aos="fade-left">
         <p>Hello! I'm Piyush, a passionate developer based in Jaipur, currently crafting mobile and web products at <strong>India Deals</strong>. Over the past five years, I've shipped fast, reliable Flutter, Android, and full‑stack web apps for startups and enterprises alike.</p>
         <p>Beyond work hours I take on freelance gigs—turning fresh ideas into polished products from pixel‑perfect UI to robust cloud back‑end. I believe code should feel smooth and alive.</p>
       </div>
     </div>
   </section>
 
-  <!-- ===== SKILLS ===== -->
   <section id="skills" data-aos="fade-up">
     <h2 class="title">Tech Stack &amp; Skills</h2>
     <div class="chips">
-      <span class="chip" data-aos="zoom-in">Flutter</span>
-      <span class="chip" data-aos="zoom-in" data-aos-delay="50">Dart</span>
-      <span class="chip" data-aos="zoom-in" data-aos-delay="100">Firebase</span>
-      <span class="chip" data-aos="zoom-in" data-aos-delay="150">Node.js</span>
-      <span class="chip" data-aos="zoom-in" data-aos-delay="200">MongoDB</span>
-      <span class="chip" data-aos="zoom-in" data-aos-delay="250">HTML/CSS/JS</span>
-      <span class="chip" data-aos="zoom-in" data-aos-delay="300">React</span>
-      <span class="chip" data-aos="zoom-in" data-aos-delay="350">REST APIs</span>
+      <span class="chip">Flutter</span>
+      <span class="chip">Dart</span>
+      <span class="chip">Firebase</span>
+      <span class="chip">Node.js</span>
+      <span class="chip">MongoDB</span>
+      <span class="chip">HTML/CSS/JS</span>
+      <span class="chip">React</span>
+      <span class="chip">REST APIs</span>
     </div>
   </section>
 
-  <!-- ===== PROJECTS ===== -->
   <section id="projects" data-aos="fade-up">
     <h2 class="title">Selected Projects</h2>
     <div class="projects-grid">
-      <div class="card" data-aos="zoom-in">
-        <h3>Rukmani Sales E‑commerce</h3>
-        <p>End‑to‑end e‑commerce solution for a local snacks retailer with Razorpay checkout &amp; WhatsApp order alerts.</p>
-      </div>
-      <div class="card" data-aos="zoom-in" data-aos-delay="50">
-        <h3>Car‑Rental Flutter App</h3>
-        <p>Full‑stack Flutter app with real‑time vehicle tracking &amp; Firebase authentication.</p>
-      </div>
-      <!-- Add more cards as needed -->
+      <div class="card"><h3>Rukmani Sales</h3><p>Snacks, sweets & drinks e-commerce app with Razorpay + WhatsApp API.</p></div>
+      <div class="card"><h3>Posh Rides</h3><p>Cab booking app with real-time features.</p><a href="https://play.google.com/store/apps/details?id=com.app.poshrides" target="_blank">Play Store</a></div>
+      <div class="card"><h3>Shush</h3><p>Private & secure chat application.</p><a href="https://play.google.com/store/apps/details?id=com.shushapp.shush" target="_blank">Play Store</a></div>
+      <div class="card"><h3>Direise</h3><p>Professional networking and job app.</p><a href="https://play.google.com/store/apps/details?id=com.dirise.dirisee" target="_blank">Play Store</a></div>
+      <div class="card"><h3>Direise Seller</h3><p>Business account platform for Direise.</p><a href="https://play.google.com/store/apps/details?id=com.diriseseller.diriseseller" target="_blank">Play Store</a></div>
+      <div class="card"><h3>My Global</h3><p>Online community & marketplace app.</p><a href="https://play.google.com/store/apps/details?id=com.myglobal" target="_blank">Play Store</a></div>
+      <div class="card"><h3>Resvago</h3><p>Web app for hotel booking and vacation planning.</p><a href="https://resvago.com/" target="_blank">Visit Website</a></div>
+      <div class="card"><h3>Key Vision PRO</h3><p>Security and surveillance mobile management app.</p><a href="https://play.google.com/store/apps/details?id=com.keyvision.KeyVisionPROMobile" target="_blank">Play Store</a></div>
+      <div class="card"><h3>Smilezy</h3><p>Healthcare consultation and pharmacy delivery app.</p><a href="https://play.google.com/store/apps/details?id=com.smileszy.smileszy" target="_blank">Play Store</a></div>
+      <div class="card"><h3>SCLLP Web</h3><p>Corporate login and admin web dashboard.</p><a href="https://people.scllp.in/#/login" target="_blank">Visit Website</a></div>
+      <div class="card"><h3>Shilergy</h3><p>E-commerce website for wellness products.</p><a href="https://shilergy.com/" target="_blank">Visit Website</a></div>
+      <div class="card"><h3>ZipCash</h3><p>Digital payment and lending app.</p><a href="https://play.google.com/store/apps/details?id=com.zipFintech.zipe&hl=en_IN" target="_blank">Play Store</a></div>
     </div>
   </section>
 
-  <!-- ===== EXPERIENCE ===== -->
   <section id="experience" data-aos="fade-up">
     <h2 class="title">Experience</h2>
     <div class="timeline">
-      <div class="t-item" data-aos="fade-up">
-        <h4>Senior Flutter Developer <span style="color:var(--accent)">|</span> India Deals</h4>
-        <p>2023 – Present — Building scalable mobile &amp; web apps serving 100k+ users.</p>
-      </div>
-      <div class="t-item" data-aos="fade-up" data-aos-delay="50">
-        <h4>Freelance Full‑Stack Developer</h4>
-        <p>2020 – Present — Delivered 30+ client projects from concept to deployment.</p>
-      </div>
+      <div class="t-item"><h4>Senior Flutter Developer | India Deals</h4><p>2023 – Present — Building scalable mobile &amp; web apps serving 100k+ users.</p></div>
+      <div class="t-item"><h4>Freelance Full‑Stack Developer</h4><p>2020 – Present — Delivered 30+ client projects from concept to deployment.</p></div>
     </div>
   </section>
 
-  <!-- ===== CONTACT ===== -->
   <section id="contact" data-aos="fade-up">
     <h2 class="title">Let's Work Together</h2>
     <div class="about-grid" style="gap:40px">
@@ -227,22 +201,18 @@
     © <span id="year"></span> Piyush Prajapati. All rights reserved.
   </footer>
 
-  <!-- ===== SCRIPTS ===== -->
+  <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script>
-    AOS.init({ once:true, duration:800 });
-
-    /* Typed.js effect */
-    new Typed('.typed-text',{
-      strings:['Flutter Developer','Full‑Stack Dev','Freelancer','Tech Enthusiast'],
-      typeSpeed:60,
-      backSpeed:30,
-      backDelay:2000,
-      loop:true
+    AOS.init({ once: true, duration: 800 });
+    new Typed('.typed-text', {
+      strings: ['Flutter Developer', 'Full‑Stack Dev', 'Freelancer', 'Tech Enthusiast'],
+      typeSpeed: 60,
+      backSpeed: 30,
+      backDelay: 2000,
+      loop: true
     });
-
-    /* dynamic year */
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
