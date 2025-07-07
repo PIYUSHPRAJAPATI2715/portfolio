@@ -10,13 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
 
   <!-- Font Awesome 6 FREE (all styles) -->
-   <!-- Font Awesome CDN (Required for icons) -->
-<link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-  integrity="sha512-1rjN55Tg8C7paS1cX0+v0n70Yk0glpbqmvkBfA8cD6KESEbg4bwopXKTx1J0zRRM5SljoV4Gb1PSHU4P/2FR/Q=="
-  crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-1rjN55Tg8C7paS1cX0+v0n70Yk0glpbqmvkBfA8cD6KESEbg4bwopXKTx1J0zRRM5SljoV4Gb1PSHU4P/2FR/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- AOS & Animate.css -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
@@ -38,50 +32,43 @@
       padding:0;
       box-sizing:border-box;
     }
-    /* give the font to actual text‑bearing elements, not the whole universe */
     body{
       font-family:'Poppins',sans-serif;
       background:var(--bg);
       color:var(--text);
       overflow-x:hidden;
     }
-    .contact-links i {
-  color: #fff !important;
-  margin-right: 10px;
-  font-size: 1.1rem;
-  vertical-align: middle;
-}
 
     /* ---------- Header ---------- */
     header{
       position:fixed;left:0;right:0;top:0;height:70px;padding:0 8%;
       display:flex;justify-content:space-between;align-items:center;
       background:rgba(0,0,0,.75);backdrop-filter:blur(8px);
-      border-bottom:1px solid var(--accent);z-index:1000
+      border-bottom:1px solid var(--accent);z-index:1000;
     }
     .logo{font-size:1.7rem;font-weight:800;color:var(--accent)}
     nav a{
-      margin-left:28px;color:var(--text);text-decoration:none;position:relative;font-weight:500
+      margin-left:28px;color:var(--text);text-decoration:none;position:relative;font-weight:500;
     }
     nav a::after{
       content:'';position:absolute;left:0;bottom:-4px;width:0;height:2px;
-      background:var(--accent);border-radius:4px;transition:width .3s
+      background:var(--accent);border-radius:4px;transition:width .3s;
     }
     nav a:hover{color:var(--accent)}
-    nav a:hover::after{width:100%}
+    nav a:hover::after{width:100%;}
 
     /* ---------- Sections ---------- */
-    section{padding:120px 8% 80px;max-width:var(--maxW);margin:auto;position:relative}
+    section{padding:120px 8% 80px;max-width:var(--maxW);margin:auto;position:relative;}
     .title{text-align:center;font-size:2.6rem;font-weight:700;margin-bottom:70px;color:var(--accent)}
 
     /* ---------- Hero ---------- */
     #hero{
-      min-height:120vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center
+      min-height:120vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
     }
     .hero-img{
       width:200px;height:200px;border-radius:50%;object-fit:cover;
       border:5px solid var(--accent);box-shadow:0 0 25px var(--accent-light);
-      animation:float 6s ease-in-out infinite
+      animation:float 6s ease-in-out infinite;
     }
     @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
     #hero h1{font-size:3.25rem;font-weight:800;margin:25px 0 6px}
@@ -91,7 +78,7 @@
     .btn-primary{
       display:inline-block;padding:13px 36px;border-radius:50px;
       background:transparent;border:2px solid var(--accent);
-      color:var(--accent);font-weight:600;text-decoration:none;transition:.3s
+      color:var(--accent);font-weight:600;text-decoration:none;transition:.3s;
     }
     .btn-primary:hover{background:var(--accent);color:var(--bg);transform:translateY(-3px)}
     @media(max-width:768px){#hero h1{font-size:2.35rem}}
@@ -100,25 +87,25 @@
     #about{background:var(--card);border-top:1px solid #222}
     .about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:50px;align-items:center}
     .portrait-wide{
-      width:100%;border-radius:16px;border:4px solid var(--accent);object-fit:cover;box-shadow:0 0 15px rgba(0,0,0,.4)
+      width:100%;border-radius:16px;border:4px solid var(--accent);object-fit:cover;box-shadow:0 0 15px rgba(0,0,0,.4);
     }
 
     /* ---------- Chips ---------- */
     .chips{display:flex;flex-wrap:wrap;gap:18px;justify-content:center}
     .chip{
       padding:11px 22px;border-radius:40px;background:#1e1e1e;
-      border:1px solid var(--accent);font-size:.9rem;transition:.3s
+      border:1px solid var(--accent);font-size:.9rem;transition:.3s;
     }
     .chip:hover{background:var(--accent);color:var(--bg)}
 
     /* ---------- Projects ---------- */
     #projects,#experience,#contact{background:var(--card)}
     .projects-grid{
-      display:grid;gap:45px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))
+      display:grid;gap:45px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     }
     .card{
       background:#1b1b1b;border-radius:20px;padding:30px 26px;
-      box-shadow:0 4px 22px rgba(0,0,0,.55);transition:.4s
+      box-shadow:0 4px 22px rgba(0,0,0,.55);transition:.4s;
     }
     .card:hover{transform:translateY(-8px);box-shadow:0 8px 28px rgba(0,0,0,.75)}
     .card h3{margin-bottom:12px;color:var(--accent)}
@@ -130,27 +117,28 @@
     .timeline::before{content:'';position:absolute;left:0;top:0;width:4px;height:100%;background:var(--accent)}
     .t-item{margin-bottom:45px;position:relative;color:#d0d0d0}
     .t-item::before{
-      content:'';position:absolute;left:-29px;top:5px;width:20px;height:20px;border-radius:50%;background:var(--accent)
+      content:'';position:absolute;left:-29px;top:5px;width:20px;height:20px;border-radius:50%;background:var(--accent);
     }
     .t-item h4{color:var(--accent)}
 
     /* ---------- Contact ---------- */
     .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:40px}
     .contact-links a{
-      display:block;margin-bottom:16px;color:var(--text);text-decoration:none;font-size:1.05rem;transition:.3s
+      display:block;margin-bottom:16px;color:var(--text);text-decoration:none;font-size:1.05rem;transition:.3s;
     }
     .contact-links a:hover{color:var(--accent-light)}
-    .contact-links i{margin-right:10px;color:var(--accent)}   /* icons now show :) */
+    .contact-links i{
+      margin-right:10px;font-size:1.2rem;color:var(--accent);vertical-align:middle;
+    }
     #contact input,#contact textarea{
       width:100%;padding:15px;border-radius:10px;border:1px solid #333;
-      background:#0f0f0f;color:var(--text);margin-bottom:16px
+      background:#0f0f0f;color:var(--text);margin-bottom:16px;
     }
     #contact button{
       padding:13px 30px;border:none;border-radius:50px;background:var(--accent);
-      color:var(--bg);font-weight:600;cursor:pointer;transition:.3s
+      color:var(--bg);font-weight:600;cursor:pointer;transition:.3s;
     }
     #contact button:hover{transform:translateY(-2px);background:var(--accent-light)}
-
 
     /* ---------- Footer ---------- */
     footer{text-align:center;padding:24px 8%;background:#000;border-top:1px solid #222;color:#aaaaaa}
@@ -158,6 +146,7 @@
 </head>
 
 <body>
+
   <!-- ========= Header ========= -->
   <header data-aos="fade-down">
     <div class="logo">Piyush.</div>
@@ -240,31 +229,30 @@
 
   <!-- ========= Contact ========= -->
   <section id="contact" data-aos="fade-up">
-  <h2 class="title">Let's Work Together</h2>
-  <div class="contact-grid">
-    <!-- Contact Links -->
-    <div class="contact-links">
-      <a href="mailto:13prajapatipiyush15@gmail.com?subject=Hello%20Piyush">
-        <i class="fa-solid fa-envelope"></i> 📧 13prajapatipiyush15@gmail.com
-      </a>
-      <a href="tel:+919549348495">
-        <i class="fa-solid fa-phone"></i> 📞 +91 95493 48495
-      </a>
-      <a href="https://www.google.com/maps/search/?api=1&query=Old%20Delhi%20Road,%20Shahpura,%20Jaipur%20302021" target="_blank">
-        <i class="fa-solid fa-location-dot"></i> 📍 Jaipur, India
-      </a>
+    <h2 class="title">Let's Work Together</h2>
+    <div class="contact-grid">
+      <!-- Contact Links -->
+      <div class="contact-links">
+        <a href="mailto:13prajapatipiyush15@gmail.com?subject=Hello%20Piyush">
+          <i class="fa-solid fa-envelope"></i> 13prajapatipiyush15@gmail.com
+        </a>
+        <a href="tel:+919549348495">
+          <i class="fa-solid fa-phone"></i> +91 95493 48495
+        </a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Old%20Delhi%20Road,%20Shahpura,%20Jaipur%20302021" target="_blank">
+          <i class="fa-solid fa-location-dot"></i> Jaipur, India
+        </a>
+      </div>
+
+      <!-- Contact Form -->
+      <form id="contactForm">
+        <input type="text"  name="name"  placeholder="Your Name"    required>
+        <input type="email" name="email" placeholder="Your Email"   required>
+        <textarea name="msg" rows="5"   placeholder="Message"      required></textarea>
+        <button type="submit">Send Message via WhatsApp</button>
+      </form>
     </div>
-
-    <!-- Contact Form -->
-    <form id="contactForm">
-      <input type="text"  name="name"  placeholder="Your Name"    required>
-      <input type="email" name="email" placeholder="Your Email"   required>
-      <textarea name="msg" rows="5"   placeholder="Message"      required></textarea>
-      <button type="submit">Send Message via WhatsApp</button>
-    </form>
-  </div>
-</section>
-
+  </section>
 
   <!-- ========= Footer ========= -->
   <footer>
@@ -279,8 +267,7 @@
 
     new Typed('.typed-text',{
       strings:['Flutter Developer','Full‑Stack Dev','Freelancer','Tech Enthusiast'],
-      typeSpeed:60,backSpeed:30,backDelay:2000,loop:true
-    });
+      typeSpeed:60,backSpeed:30,backDelay:2000,loop:true);
 
     document.getElementById('year').textContent = new Date().getFullYear();
 
