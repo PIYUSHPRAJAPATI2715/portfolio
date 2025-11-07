@@ -1,4 +1,33 @@
-<!DOCTYPE html>
+[12:18 pm, 7/11/2025] Piyush Prajapati: <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Priyanshi Gautam | Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- AOS Animation CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0c0c0c;
+      color: #f5f5f5;
+      scroll-behavior: smooth;
+    }
+    header {
+      text-align: center;
+      padding: 60px 20px;
+    }
+    header img {
+      width: 200px;
+      height: 200px;
+   …
+[12:21 pm, 7/11/2025] Piyush Prajapati: <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -6,256 +35,187 @@
   <title>Priyanshi Gautam | Portfolio</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
 
-  <!-- AOS Animation -->
+  <!-- AOS CSS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-  <!-- EmailJS -->
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-
     body {
-      font-family: 'Outfit', sans-serif;
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top, #0b0b0b, #000);
       color: #fff;
-      background: radial-gradient(circle at 30% 30%, #0b001a, #060013, #01000c);
       overflow-x: hidden;
-      position: relative;
     }
 
-    /* Particle Background Animation */
+    /* Floating Particles */
     body::before {
       content: "";
       position: fixed;
-      inset: 0;
-      background: radial-gradient(circle at center, rgba(111,0,255,0.15), transparent 70%),
-                  radial-gradient(circle at 80% 20%, rgba(0,200,255,0.1), transparent 70%),
-                  radial-gradient(circle at 20% 80%, rgba(255,255,0,0.08), transparent 70%);
-      animation: moveBg 20s infinite alternate ease-in-out;
-      z-index: -1;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,215,0,0.1) 2px, transparent 2px);
+      background-size: 50px 50px;
+      animation: moveStars 20s linear infinite;
+      z-index: 0;
+      opacity: 0.3;
     }
-
-    @keyframes moveBg {
-      0% { background-position: 0 0, 100% 0, 0 100%; }
-      100% { background-position: 100% 100%, 0 100%, 100% 0; }
+    @keyframes moveStars {
+      from { transform: translateY(0); }
+      to { transform: translateY(-200px); }
     }
 
     header {
       text-align: center;
-      padding: 110px 20px 70px;
+      padding: 100px 20px 60px;
+      position: relative;
+      z-index: 1;
     }
 
     header img {
-      width: 220px;
-      height: 220px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
-      border: 3px solid #00b3ff;
-      box-shadow: 0 0 30px #00b3ff, 0 0 60px rgba(0,179,255,0.5);
-      object-fit: cover;
+      border: 5px solid #FFD700;
+      box-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
       animation: float 4s ease-in-out infinite;
     }
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-12px); }
-    }
-
-    .typing-name {
+    header h1 {
       font-family: 'Orbitron', sans-serif;
-      font-size: 3.2rem;
-      color: #00e1ff;
+      font-size: 3rem;
       margin-top: 25px;
-      text-shadow: 0 0 20px #00e1ff;
-      border-right: 3px solid #00e1ff;
-      white-space: nowrap;
-      overflow: hidden;
-      width: 0;
-      animation: typing 3s steps(22, end) forwards, blink 0.7s infinite;
+      color: #FFD700;
+      text-shadow: 0 0 15px #FFD700;
+      letter-spacing: 2px;
+      animation: fadeInText 2s ease forwards;
     }
 
-    @keyframes typing { from { width: 0; } to { width: 22ch; } }
-    @keyframes blink { 50% { border-color: transparent; } }
+    @keyframes fadeInText {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
     header p {
-      color: #b5b5b5;
-      margin-top: 15px;
       font-size: 1.1rem;
+      margin-top: 10px;
+      color: #bbb;
+      animation: fadeInText 2s ease forwards;
     }
 
-    header a {
-      color: #00e1ff;
+    a {
+      color: #FFD700;
       text-decoration: none;
       font-weight: 600;
-      display: inline-block;
-      margin-top: 20px;
-      border: 2px solid #00e1ff;
-      padding: 10px 22px;
-      border-radius: 50px;
-      transition: all 0.3s ease;
+      transition: color 0.3s ease;
     }
-
-    header a:hover {
-      background: #00e1ff;
-      color: #0b001a;
-      box-shadow: 0 0 20px #00e1ff;
+    a:hover {
+      color: #fff;
+      text-shadow: 0 0 10px #FFD700;
     }
 
     section {
       padding: 90px 8%;
+      position: relative;
+      z-index: 1;
     }
 
     section h2 {
       text-align: center;
-      font-family: 'Orbitron', sans-serif;
-      color: #ffdd33;
-      font-size: 2.4rem;
-      text-shadow: 0 0 18px rgba(255,221,51,0.7);
+      font-size: 2.5rem;
+      color: #FFD700;
       margin-bottom: 60px;
+      text-shadow: 0 0 15px rgba(255,215,0,0.6);
       position: relative;
-    }
-
-    section h2::after {
-      content: "";
-      display: block;
-      width: 80px;
-      height: 4px;
-      background: linear-gradient(90deg, transparent, #ffdd33, transparent);
-      margin: 12px auto 0;
-      border-radius: 2px;
+      font-family: 'Orbitron', sans-serif;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 
     .card {
-      background: rgba(255,255,255,0.04);
-      border-radius: 20px;
-      padding: 35px;
-      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,215,0,0.3);
+      border-radius: 15px;
+      padding: 30px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px rgba(255,215,0,0.1);
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
       position: relative;
-      transition: all 0.5s ease;
-      overflow: hidden;
-      backdrop-filter: blur(12px);
     }
 
     .card::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(130deg, transparent, rgba(0,238,255,0.15), transparent);
-      transform: translateX(-100%);
-      transition: 0.8s;
+      border-radius: 15px;
+      background: linear-gradient(135deg, rgba(255,215,0,0.15), rgba(255,255,255,0.03));
+      opacity: 0;
+      transition: opacity 0.4s ease;
     }
 
     .card:hover::before {
-      transform: translateX(100%);
+      opacity: 1;
     }
 
     .card:hover {
-      transform: translateY(-10px) scale(1.03);
-      box-shadow: 0 0 30px rgba(0,238,255,0.3);
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 0 30px rgba(255,215,0,0.4);
     }
 
-    .card h3 {
-      color: #00e1ff;
+    h3 {
+      color: #FFD700;
       font-size: 1.4rem;
       margin-bottom: 15px;
     }
 
-    .card ul {
-      list-style: none;
-      color: #ccc;
-      line-height: 1.8;
-    }
-
-    /* Contact Form */
-    form {
-      max-width: 600px;
-      margin: auto;
-      background: rgba(255,255,255,0.05);
-      padding: 40px;
-      border-radius: 20px;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.1);
-      box-shadow: 0 0 25px rgba(0,238,255,0.15);
-    }
-
-    form input, form textarea {
-      width: 100%;
-      background: rgba(0,0,0,0.4);
-      border: 1px solid rgba(0,238,255,0.3);
-      color: #fff;
-      border-radius: 10px;
-      padding: 12px 15px;
-      margin-bottom: 20px;
-      outline: none;
-      transition: all 0.3s ease;
-    }
-
-    form input:focus, form textarea:focus {
-      border-color: #00e1ff;
-      box-shadow: 0 0 10px #00e1ff;
-    }
-
-    form button {
-      background: linear-gradient(90deg, #00b3ff, #00ffcc);
-      color: #000;
-      border: none;
-      font-weight: 700;
-      font-size: 1rem;
-      border-radius: 50px;
-      padding: 12px;
-      cursor: pointer;
-      transition: all 0.4s ease;
-      width: 100%;
-    }
-
-    form button:hover {
-      box-shadow: 0 0 20px #00e1ff;
-      transform: scale(1.05);
-    }
+    ul { list-style: none; }
+    ul li { margin: 6px 0; color: #ccc; }
 
     footer {
       text-align: center;
-      padding: 40px 10px;
-      background: #050010;
-      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 30px;
+      background: #111;
       color: #aaa;
       font-size: 0.9rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Floating Animation */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <img src="profile.jpeg" alt="Priyanshi Gautam">
-    <h1 class="typing-name">PRIYANSHI GAUTAM</h1>
-    <p>Quality Analyst | Data Analytics Enthusiast</p>
+  <header data-aos="zoom-in">
+    <img src="profile.JPG" alt="Priyanshi Gautam">
+    <h1>PRIYANSHI GAUTAM</h1>
+    <p>Motivated Graduate | Data Analytics & Testing Enthusiast</p>
     <p>📍 Uttar Pradesh | 📧 priyanshig836@gmail.com | 📱 +91 9068786795</p>
     <a href="https://www.linkedin.com/in/priyanshi-gautam-2793681a5" target="_blank">🔗 LinkedIn</a>
   </header>
 
-  <!-- SKILLS -->
   <section>
     <h2 data-aos="fade-up">Skills</h2>
     <div class="grid">
-      <div class="card" data-aos="zoom-in">
+      <div class="card" data-aos="flip-left">
         <h3>Testing & QA</h3>
         <ul>
           <li>Manual Testing</li>
           <li>Automation (Appium, Selenium)</li>
           <li>Bug Tracking (JIRA, Trello, ClickUp)</li>
-          <li>API & Cross-browser Testing</li>
+          <li>Cross-browser & API Testing</li>
         </ul>
       </div>
-      <div class="card" data-aos="zoom-in" data-aos-delay="150">
+      <div class="card" data-aos="flip-right" data-aos-delay="200">
         <h3>Programming</h3>
         <ul>
           <li>JavaScript</li>
@@ -263,113 +223,130 @@
           <li>TypeScript (Angular)</li>
         </ul>
       </div>
-      <div class="card" data-aos="zoom-in" data-aos-delay="300">
+      <div class="card" data-aos="flip-up" data-aos-delay="400">
         <h3>Data Analytics</h3>
         <ul>
           <li>Power BI, DAX, Power Query</li>
-          <li>Dashboard Design & Data Visualization</li>
+          <li>Dashboard Design</li>
           <li>Data Cleaning & Transformation</li>
-          <li>Time Series & Geo Analysis</li>
+          <li>Geographic & Time Series Analysis</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
   <section>
     <h2 data-aos="fade-up">Experience</h2>
     <div class="grid">
-      <div class="card" data-aos="fade-right">
+      <div class="card" data-aos="zoom-in-right">
         <h3>Eoxysit Solution LLP – Quality Analyst</h3>
         <p><em>Feb 2025 – Present</em></p>
         <ul>
-          <li>Conducted manual & automation testing for web and mobile apps.</li>
-          <li>Managed bug tracking via JIRA and Trello.</li>
-          <li>Collaborated with dev teams for resolution and QA audits.</li>
+          <li>End-to-end manual testing for web & mobile apps.</li>
+          <li>Designed test cases and tracked bugs in JIRA & Trello.</li>
+          <li>Collaborated with developers for issue resolution.</li>
         </ul>
       </div>
-      <div class="card" data-aos="fade-left">
+      <div class="card" data-aos="zoom-in-left">
         <h3>JPR Systems Pvt Ltd – Web Developer</h3>
         <p><em>Mar 2024 – Jun 2024</em></p>
         <ul>
-          <li>Developed Angular-based responsive web applications.</li>
-          <li>Integrated REST APIs and optimized UX/UI.</li>
-          <li>Worked on component design and reactive forms.</li>
+          <li>Built Angular-based dynamic web apps.</li>
+          <li>Integrated REST APIs with reactive forms & validations.</li>
+          <li>Collaborated on UI/UX improvements.</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- PROJECTS -->
   <section>
     <h2 data-aos="fade-up">Projects</h2>
     <div class="grid">
-      <div class="card" data-aos="zoom-in">
+      <div class="card" data-aos="fade-up">
         <h3>DJPlayNow – Mobile App Testing</h3>
+        <p>Tools: Appium, JavaScript, JIRA</p>
         <ul>
           <li>Automated playback, login & search testing.</li>
-          <li>Reduced manual testing using Appium scripts.</li>
+          <li>Reduced manual testing with automation scripts.</li>
         </ul>
       </div>
-      <div class="card" data-aos="zoom-in" data-aos-delay="150">
+      <div class="card" data-aos="fade-up" data-aos-delay="200">
         <h3>Kari Collective – E-commerce Testing</h3>
+        <p>Tools: Trello, Selenium (learning), JavaScript</p>
         <ul>
-          <li>Performed UI and regression testing.</li>
-          <li>Logged 40+ detailed bugs using Trello.</li>
+          <li>Manual testing for login, cart & checkout.</li>
+          <li>Cross-browser testing & bug reporting.</li>
         </ul>
       </div>
-      <div class="card" data-aos="zoom-in" data-aos-delay="300">
+      <div class="card" data-aos="fade-up" data-aos-delay="400">
+        <h3>AI-Powered Book Writing App</h3>
+        <p>Tools: ClickUp | Manual & Cross-browser Testing</p>
+        <ul>
+          <li>Validated writing, editing & saving features.</li>
+          <li>Documented issues in ClickUp for developers.</li>
+        </ul>
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-delay="600">
         <h3>Waitlist Dashboard – Power BI</h3>
         <ul>
-          <li>Transformed data into interactive dashboards.</li>
-          <li>Created KPIs and Y/Y visual insights.</li>
+          <li>Transformed raw data into interactive dashboards.</li>
+          <li>Built Y/Y comparison visuals with time intelligence.</li>
         </ul>
       </div>
-      <div class="card" data-aos="zoom-in" data-aos-delay="450">
+      <div class="card" data-aos="fade-up" data-aos-delay="800">
         <h3>Uber Trip Analysis – Power BI</h3>
         <ul>
-          <li>Analyzed trends and performance metrics.</li>
-          <li>Built geo-based insights visuals.</li>
+          <li>Analyzed trip patterns, peak times & driver performance.</li>
+          <li>Derived insights for data-driven decisions.</li>
+        </ul>
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-delay="1000">
+        <h3>Code Flow – Algorithm Visualization Tool</h3>
+        <ul>
+          <li>Visualized sorting algorithms with live metrics.</li>
+          <li>Optimized performance for better efficiency.</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact">
+  <section>
+    <h2 data-aos="fade-up">Education</h2>
+    <div class="grid">
+      <div class="card" data-aos="zoom-in">
+        <h3>B.Tech in Computer Science</h3>
+        <p>JECRC University, Jaipur – 2024</p>
+      </div>
+      <div class="card" data-aos="zoom-in" data-aos-delay="200">
+        <h3>Diploma in IT</h3>
+        <p>Dayalbagh Educational Institute, Agra – 2021</p>
+      </div>
+      <div class="card" data-aos="zoom-in" data-aos-delay="400">
+        <h3>High School</h3>
+        <p>SRG Memorial Sr. Sec School, Agra – 2017</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
     <h2 data-aos="fade-up">Contact Me</h2>
-    <form id="contact-form" data-aos="zoom-in">
-      <input type="text" id="name" placeholder="Your Name" required>
-      <input type="email" id="email" placeholder="Your Email" required>
-      <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message 🚀</button>
-    </form>
+    <div class="grid">
+      <div class="card" data-aos="flip-up">
+        <p>📍 Uttar Pradesh</p>
+        <p>📧 priyanshig836@gmail.com</p>
+        <p>📱 +91 9068786795</p>
+      </div>
+    </div>
   </section>
 
   <footer>
     <p>© 2025 Priyanshi Gautam | Data Analytics & Testing Enthusiast</p>
   </footer>
 
-  <!-- AOS -->
+  <!-- AOS Script -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init({ duration: 1200, once: true });</script>
-
-  <!-- EmailJS -->
   <script>
-    (function(){ emailjs.init("5bUKpnL53r4Npm3aR"); })();
-    document.getElementById("contact-form").addEventListener("submit", function(e) {
-      e.preventDefault();
-      emailjs.send("service_4uwqhsl", "template_nypl0pp", {
-        from_name: document.getElementById("name").value,
-        from_email: document.getElementById("email").value,
-        message: document.getElementById("message").value
-      }).then(() => {
-        alert("✅ Message Sent Successfully!");
-        e.target.reset();
-      }, () => {
-        alert("❌ Failed to send message. Try again later.");
-      });
-    });
+    AOS.init({ duration: 1200, once: true });
   </script>
 </body>
 </html>
