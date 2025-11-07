@@ -1,317 +1,374 @@
-<!-- Save as index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Piyush Prajapati | Portfolio</title>
+  <title>Priyanshi Gautam | Portfolio</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome 6 FREE (all styles) -->
-   <!-- Font Awesome CDN (Required for icons) -->
-<link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-  integrity="sha512-1rjN55Tg8C7paS1cX0+v0n70Yk0glpbqmvkBfA8cD6KESEbg4bwopXKTx1J0zRRM5SljoV4Gb1PSHU4P/2FR/Q=="
-  crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-
-
-  <!-- AOS & Animate.css -->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
   <style>
-    :root{
-      --accent:#d4af37;
-      --accent-light:#ffdd80;
-      --bg:#0b0b0b;
-      --card:#111111;
-      --text:#f8f8f8;
-      --maxW:1200px;
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      color: #fff;
+      background: radial-gradient(circle at 30% 30%, #0b001a, #060013, #01000c);
+      overflow-x: hidden;
+      position: relative;
     }
 
-    /* ---- GLOBAL RESET ---- */
-    *,*::before,*::after{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
-    /* give the font to actual text‑bearing elements, not the whole universe */
-    body{
-      font-family:'Poppins',sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      overflow-x:hidden;
-    }
-    .contact-links i {
-  color: #fff !important;
-  margin-right: 10px;
-  font-size: 1.1rem;
-  vertical-align: middle;
-}
-
-    /* ---------- Header ---------- */
-    header{
-      position:fixed;left:0;right:0;top:0;height:70px;padding:0 8%;
-      display:flex;justify-content:space-between;align-items:center;
-      background:rgba(0,0,0,.75);backdrop-filter:blur(8px);
-      border-bottom:1px solid var(--accent);z-index:1000
-    }
-    .logo{font-size:1.7rem;font-weight:800;color:var(--accent)}
-    nav a{
-      margin-left:28px;color:var(--text);text-decoration:none;position:relative;font-weight:500
-    }
-    nav a::after{
-      content:'';position:absolute;left:0;bottom:-4px;width:0;height:2px;
-      background:var(--accent);border-radius:4px;transition:width .3s
-    }
-    nav a:hover{color:var(--accent)}
-    nav a:hover::after{width:100%}
-
-    /* ---------- Sections ---------- */
-    section{padding:120px 8% 80px;max-width:var(--maxW);margin:auto;position:relative}
-    .title{text-align:center;font-size:2.6rem;font-weight:700;margin-bottom:70px;color:var(--accent)}
-
-    /* ---------- Hero ---------- */
-    #hero{
-      min-height:120vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center
-    }
-    .hero-img{
-      width:200px;height:200px;border-radius:50%;object-fit:cover;
-      border:5px solid var(--accent);box-shadow:0 0 25px var(--accent-light);
-      animation:float 6s ease-in-out infinite
-    }
-    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
-    #hero h1{font-size:3.25rem;font-weight:800;margin:25px 0 6px}
-    #hero h1 span{color:var(--accent)}
-    .typed-text{color:var(--accent);font-weight:600}
-    #hero p{max-width:680px;margin:22px auto 34px;line-height:1.65}
-    .btn-primary{
-      display:inline-block;padding:13px 36px;border-radius:50px;
-      background:transparent;border:2px solid var(--accent);
-      color:var(--accent);font-weight:600;text-decoration:none;transition:.3s
-    }
-    .btn-primary:hover{background:var(--accent);color:var(--bg);transform:translateY(-3px)}
-    @media(max-width:768px){#hero h1{font-size:2.35rem}}
-
-    /* ---------- About ---------- */
-    #about{background:var(--card);border-top:1px solid #222}
-    .about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:50px;align-items:center}
-    .portrait-wide{
-      width:100%;border-radius:16px;border:4px solid var(--accent);object-fit:cover;box-shadow:0 0 15px rgba(0,0,0,.4)
+    /* Particle Background Animation */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(111,0,255,0.15), transparent 70%),
+                  radial-gradient(circle at 80% 20%, rgba(0,200,255,0.1), transparent 70%),
+                  radial-gradient(circle at 20% 80%, rgba(255,255,0,0.08), transparent 70%);
+      animation: moveBg 20s infinite alternate ease-in-out;
+      z-index: -1;
     }
 
-    /* ---------- Chips ---------- */
-    .chips{display:flex;flex-wrap:wrap;gap:18px;justify-content:center}
-    .chip{
-      padding:11px 22px;border-radius:40px;background:#1e1e1e;
-      border:1px solid var(--accent);font-size:.9rem;transition:.3s
+    @keyframes moveBg {
+      0% { background-position: 0 0, 100% 0, 0 100%; }
+      100% { background-position: 100% 100%, 0 100%, 100% 0; }
     }
-    .chip:hover{background:var(--accent);color:var(--bg)}
 
-    /* ---------- Projects ---------- */
-    #projects,#experience,#contact{background:var(--card)}
-    .projects-grid{
-      display:grid;gap:45px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))
+    header {
+      text-align: center;
+      padding: 110px 20px 70px;
     }
-    .card{
-      background:#1b1b1b;border-radius:20px;padding:30px 26px;
-      box-shadow:0 4px 22px rgba(0,0,0,.55);transition:.4s
-    }
-    .card:hover{transform:translateY(-8px);box-shadow:0 8px 28px rgba(0,0,0,.75)}
-    .card h3{margin-bottom:12px;color:var(--accent)}
-    .card p{color:#d0d0d0}
-    .card a{color:#ffdd80;text-decoration:underline;display:inline-block;margin-top:8px}
 
-    /* ---------- Timeline ---------- */
-    .timeline{margin-left:22px;padding-left:22px;position:relative}
-    .timeline::before{content:'';position:absolute;left:0;top:0;width:4px;height:100%;background:var(--accent)}
-    .t-item{margin-bottom:45px;position:relative;color:#d0d0d0}
-    .t-item::before{
-      content:'';position:absolute;left:-29px;top:5px;width:20px;height:20px;border-radius:50%;background:var(--accent)
+    header img {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      border: 3px solid #00b3ff;
+      box-shadow: 0 0 30px #00b3ff, 0 0 60px rgba(0,179,255,0.5);
+      object-fit: cover;
+      animation: float 4s ease-in-out infinite;
     }
-    .t-item h4{color:var(--accent)}
 
-    /* ---------- Contact ---------- */
-    .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:40px}
-    .contact-links a{
-      display:block;margin-bottom:16px;color:var(--text);text-decoration:none;font-size:1.05rem;transition:.3s
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
     }
-    .contact-links a:hover{color:var(--accent-light)}
-    .contact-links i{margin-right:10px;color:var(--accent)}   /* icons now show :) */
-    #contact input,#contact textarea{
-      width:100%;padding:15px;border-radius:10px;border:1px solid #333;
-      background:#0f0f0f;color:var(--text);margin-bottom:16px
-    }
-    #contact button{
-      padding:13px 30px;border:none;border-radius:50px;background:var(--accent);
-      color:var(--bg);font-weight:600;cursor:pointer;transition:.3s
-    }
-    #contact button:hover{transform:translateY(-2px);background:var(--accent-light)}
 
+    .typing-name {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3.2rem;
+      color: #00e1ff;
+      margin-top: 25px;
+      text-shadow: 0 0 20px #00e1ff;
+      border-right: 3px solid #00e1ff;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 3s steps(22, end) forwards, blink 0.7s infinite;
+    }
 
-    /* ---------- Footer ---------- */
-    footer{text-align:center;padding:24px 8%;background:#000;border-top:1px solid #222;color:#aaaaaa}
+    @keyframes typing { from { width: 0; } to { width: 22ch; } }
+    @keyframes blink { 50% { border-color: transparent; } }
+
+    header p {
+      color: #b5b5b5;
+      margin-top: 15px;
+      font-size: 1.1rem;
+    }
+
+    header a {
+      color: #00e1ff;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+      margin-top: 20px;
+      border: 2px solid #00e1ff;
+      padding: 10px 22px;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+    }
+
+    header a:hover {
+      background: #00e1ff;
+      color: #0b001a;
+      box-shadow: 0 0 20px #00e1ff;
+    }
+
+    section {
+      padding: 90px 8%;
+    }
+
+    section h2 {
+      text-align: center;
+      font-family: 'Orbitron', sans-serif;
+      color: #ffdd33;
+      font-size: 2.4rem;
+      text-shadow: 0 0 18px rgba(255,221,51,0.7);
+      margin-bottom: 60px;
+      position: relative;
+    }
+
+    section h2::after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, transparent, #ffdd33, transparent);
+      margin: 12px auto 0;
+      border-radius: 2px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.04);
+      border-radius: 20px;
+      padding: 35px;
+      border: 1px solid rgba(255,255,255,0.08);
+      position: relative;
+      transition: all 0.5s ease;
+      overflow: hidden;
+      backdrop-filter: blur(12px);
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(130deg, transparent, rgba(0,238,255,0.15), transparent);
+      transform: translateX(-100%);
+      transition: 0.8s;
+    }
+
+    .card:hover::before {
+      transform: translateX(100%);
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 0 30px rgba(0,238,255,0.3);
+    }
+
+    .card h3 {
+      color: #00e1ff;
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+    }
+
+    .card ul {
+      list-style: none;
+      color: #ccc;
+      line-height: 1.8;
+    }
+
+    /* Contact Form */
+    form {
+      max-width: 600px;
+      margin: auto;
+      background: rgba(255,255,255,0.05);
+      padding: 40px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 0 25px rgba(0,238,255,0.15);
+    }
+
+    form input, form textarea {
+      width: 100%;
+      background: rgba(0,0,0,0.4);
+      border: 1px solid rgba(0,238,255,0.3);
+      color: #fff;
+      border-radius: 10px;
+      padding: 12px 15px;
+      margin-bottom: 20px;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    form input:focus, form textarea:focus {
+      border-color: #00e1ff;
+      box-shadow: 0 0 10px #00e1ff;
+    }
+
+    form button {
+      background: linear-gradient(90deg, #00b3ff, #00ffcc);
+      color: #000;
+      border: none;
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: 50px;
+      padding: 12px;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      width: 100%;
+    }
+
+    form button:hover {
+      box-shadow: 0 0 20px #00e1ff;
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 10px;
+      background: #050010;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: #aaa;
+      font-size: 0.9rem;
+    }
   </style>
 </head>
-
 <body>
-  
-  <!-- ========= Header ========= -->
-  <header data-aos="fade-down">
-    <div class="logo">Piyush Prajapati.</div>
-    <nav>
-      <a href="#hero">Home</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#contact">Contact</a>
-      <a href="piyush_prajapat.pdf" download>Resume</a>
-    </nav>
+
+  <!-- HEADER -->
+  <header>
+    <img src="profile.jpeg" alt="Priyanshi Gautam">
+    <h1 class="typing-name">PRIYANSHI GAUTAM</h1>
+    <p>Quality Analyst | Data Analytics Enthusiast</p>
+    <p>📍 Uttar Pradesh | 📧 priyanshig836@gmail.com | 📱 +91 9068786795</p>
+    <a href="https://www.linkedin.com/in/priyanshi-gautam-2793681a5" target="_blank">🔗 LinkedIn</a>
   </header>
 
-  <!-- ========= Hero ========= -->
-  <section id="hero">
-    <img src="assets/profil.png" alt="Piyush Prajapati" class="hero-img animate__animated animate__fadeIn">
-    <h1 class="animate__animated animate__fadeInUp">Hi, I'm <span>Piyush Prajapati</span></h1>
-    <h2 class="typed-text animate__animated animate__fadeInUp"></h2>
-    <p class="animate__animated animate__fadeInUp">
-      Mobile Application &amp; Full‑Stack Web Developer with 4+ years of experience crafting high‑performance apps and seamless digital experiences.
-    </p>
-    <a href="#contact" class="btn-primary animate__animated animate__fadeInUp">Hire Me</a>
-  </section>
-
-  <!-- ========= About ========= -->
-  <section id="about" data-aos="fade-up">
-    <h2 class="title">About Me</h2>
-    <div class="about-grid">
-      <img src="assets/profil.png" alt="Piyush Prajapati" class="portrait-wide" data-aos="zoom-in" />
-      <div data-aos="fade-left">
-        <p>Hello! I'm Piyush, a passionate developer based in Jaipur, currently crafting mobile and web products at <strong>India Deals</strong>. Over the past five years, I've shipped fast, reliable Flutter, Android, and full‑stack web apps for startups and enterprises alike.</p>
-        <p>Beyond work hours I take on freelance gigs—turning fresh ideas into polished products from pixel‑perfect UI to robust cloud back‑end. I believe code should feel smooth and alive.</p>
+  <!-- SKILLS -->
+  <section>
+    <h2 data-aos="fade-up">Skills</h2>
+    <div class="grid">
+      <div class="card" data-aos="zoom-in">
+        <h3>Testing & QA</h3>
+        <ul>
+          <li>Manual Testing</li>
+          <li>Automation (Appium, Selenium)</li>
+          <li>Bug Tracking (JIRA, Trello, ClickUp)</li>
+          <li>API & Cross-browser Testing</li>
+        </ul>
+      </div>
+      <div class="card" data-aos="zoom-in" data-aos-delay="150">
+        <h3>Programming</h3>
+        <ul>
+          <li>JavaScript</li>
+          <li>Python (Basics)</li>
+          <li>TypeScript (Angular)</li>
+        </ul>
+      </div>
+      <div class="card" data-aos="zoom-in" data-aos-delay="300">
+        <h3>Data Analytics</h3>
+        <ul>
+          <li>Power BI, DAX, Power Query</li>
+          <li>Dashboard Design & Data Visualization</li>
+          <li>Data Cleaning & Transformation</li>
+          <li>Time Series & Geo Analysis</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <!-- ========= Skills ========= -->
-  <section id="skills" data-aos="fade-up">
-    <h2 class="title">Tech Stack &amp; Skills</h2>
-    <div class="chips">
-      <span class="chip">Flutter</span>
-      <span class="chip">Dart</span>
-      <span class="chip">Firebase</span>
-      <span class="chip">Node.js</span>
-      <span class="chip">MongoDB</span>
-      <span class="chip">HTML/CSS/JS</span>
-      <span class="chip">React</span>
-      <span class="chip">REST APIs</span>
+  <!-- EXPERIENCE -->
+  <section>
+    <h2 data-aos="fade-up">Experience</h2>
+    <div class="grid">
+      <div class="card" data-aos="fade-right">
+        <h3>Eoxysit Solution LLP – Quality Analyst</h3>
+        <p><em>Feb 2025 – Present</em></p>
+        <ul>
+          <li>Conducted manual & automation testing for web and mobile apps.</li>
+          <li>Managed bug tracking via JIRA and Trello.</li>
+          <li>Collaborated with dev teams for resolution and QA audits.</li>
+        </ul>
+      </div>
+      <div class="card" data-aos="fade-left">
+        <h3>JPR Systems Pvt Ltd – Web Developer</h3>
+        <p><em>Mar 2024 – Jun 2024</em></p>
+        <ul>
+          <li>Developed Angular-based responsive web applications.</li>
+          <li>Integrated REST APIs and optimized UX/UI.</li>
+          <li>Worked on component design and reactive forms.</li>
+        </ul>
+      </div>
     </div>
   </section>
 
-  <!-- ========= Projects ========= -->
-  <section id="projects" data-aos="fade-up">
-    <h2 class="title">Selected Projects</h2>
-    <div class="projects-grid">
-      <div class="card"><h3>Rukmani Sales</h3><p>Snacks, sweets & drinks e‑commerce app with Razorpay + WhatsApp API.</p></div>
-      <div class="card"><h3>Posh Rides</h3><p>Cab booking app with real‑time features.</p><a href="https://play.google.com/store/apps/details?id=com.app.poshrides" target="_blank">Play Store</a></div>
-      <div class="card"><h3>Shush</h3><p>Private & secure chat application.</p><a href="https://play.google.com/store/apps/details?id=com.shushapp.shush" target="_blank">Play Store</a></div>
-      <div class="card"><h3>Direise</h3><p>Professional networking and job app.</p><a href="https://play.google.com/store/apps/details?id=com.dirise.dirisee" target="_blank">Play Store</a></div>
-      <div class="card"><h3>Direise Seller</h3><p>Business account platform for Direise.</p><a href="https://play.google.com/store/apps/details?id=com.diriseseller.diriseseller" target="_blank">Play Store</a></div>
-      <div class="card"><h3>My Global</h3><p>Online community & marketplace app.</p><a href="https://play.google.com/store/apps/details?id=com.myglobal" target="_blank">Play Store</a></div>
-      <div class="card"><h3>Resvago</h3><p>Web app for hotel booking and vacation planning.</p><a href="https://resvago.com/" target="_blank">Visit Website</a></div>
-      <div class="card"><h3>Key Vision PRO</h3><p>Security and surveillance mobile management app.</p><a href="https://play.google.com/store/apps/details?id=com.keyvision.KeyVisionPROMobile" target="_blank">Play Store</a></div>
-      <div class="card"><h3>Smilezy</h3><p>Healthcare consultation and pharmacy delivery app.</p><a href="https://play.google.com/store/apps/details?id=com.smileszy.smileszy" target="_blank">Play Store</a></div>
-      <div class="card"><h3>SCLLP Web</h3><p>Corporate login and admin web dashboard.</p><a href="https://people.scllp.in/#/login" target="_blank">Visit Website</a></div>
-      <div class="card"><h3>Shilergy</h3><p>E‑commerce website for wellness products.</p><a href="https://shilergy.com/" target="_blank">Visit Website</a></div>
-      <div class="card"><h3>ZipCash</h3><p>Digital payment and lending app.</p><a href="https://play.google.com/store/apps/details?id=com.zipFintech.zipe&hl=en_IN" target="_blank">Play Store</a></div>
+  <!-- PROJECTS -->
+  <section>
+    <h2 data-aos="fade-up">Projects</h2>
+    <div class="grid">
+      <div class="card" data-aos="zoom-in">
+        <h3>DJPlayNow – Mobile App Testing</h3>
+        <ul>
+          <li>Automated playback, login & search testing.</li>
+          <li>Reduced manual testing using Appium scripts.</li>
+        </ul>
+      </div>
+      <div class="card" data-aos="zoom-in" data-aos-delay="150">
+        <h3>Kari Collective – E-commerce Testing</h3>
+        <ul>
+          <li>Performed UI and regression testing.</li>
+          <li>Logged 40+ detailed bugs using Trello.</li>
+        </ul>
+      </div>
+      <div class="card" data-aos="zoom-in" data-aos-delay="300">
+        <h3>Waitlist Dashboard – Power BI</h3>
+        <ul>
+          <li>Transformed data into interactive dashboards.</li>
+          <li>Created KPIs and Y/Y visual insights.</li>
+        </ul>
+      </div>
+      <div class="card" data-aos="zoom-in" data-aos-delay="450">
+        <h3>Uber Trip Analysis – Power BI</h3>
+        <ul>
+          <li>Analyzed trends and performance metrics.</li>
+          <li>Built geo-based insights visuals.</li>
+        </ul>
+      </div>
     </div>
   </section>
 
-  <!-- ========= Experience ========= -->
-  <section id="experience" data-aos="fade-up">
-    <h2 class="title">Experience</h2>
-    <div class="timeline">
-      <div class="t-item"><h4>Senior Flutter Developer | India Deals</h4><p>2023 – Present — Building scalable mobile &amp; web apps serving 100k+ users.</p></div>
-      <div class="t-item"><h4>Freelance Full‑Stack Developer</h4><p>2020 – Present — Delivered 30+ client projects from concept to deployment.</p></div>
-    </div>
-  </section>
-
-  <!-- ========= Contact ========= -->
-  <section id="contact" data-aos="fade-up">
-  <h2 class="title">Let's Work Together</h2>
-  <div class="contact-grid">
-    <!-- Contact Links -->
-    <div class="contact-links">
-      <a href="mailto:13prajapatipiyush15@gmail.com?subject=Hello%20Piyush">
-        <i class="fa-solid fa-envelope"></i> 📧 13prajapatipiyush15@gmail.com
-      </a>
-      <a href="tel:+919549348495">
-        <i class="fa-solid fa-phone"></i> 📞 +91 95493 48495
-      </a>
-      <a href="https://www.google.com/maps/search/?api=1&query=Old%20Delhi%20Road,%20Shahpura,%20Jaipur%20302021" target="_blank">
-        <i class="fa-solid fa-location-dot"></i> 📍 Jaipur, India
-      </a>
-       <a href="https://github.com/PIYUSHPRAJAPATI2715" target="_blank">
-        <i class="fa-brands fa-github"></i> 🐙 GitHub
-      </a>
-      <a href="https://www.linkedin.com/in/piyush-prajapati-78356a262/" target="_blank">
-        <i class="fa-brands fa-linkedin"></i> 🔗 LinkedIn
-      </a>
-      <a href="https://www.instagram.com/piyushprajapati_1527?igsh=MXNzZDh2ZDd0dnJvZg==" target="_blank">
-        <i class="fa-brands fa-instagram"></i> 📸 IInstagram
-      </a>
-    
-    </div>
-
-    <!-- Contact Form -->
-    <form id="contactForm">
-      <input type="text"  name="name"  placeholder="Your Name"    required>
-      <input type="email" name="email" placeholder="Your Email"   required>
-      <textarea name="msg" rows="5"   placeholder="Message"      required></textarea>
-      <button type="submit">Send Message via WhatsApp</button>
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2 data-aos="fade-up">Contact Me</h2>
+    <form id="contact-form" data-aos="zoom-in">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message 🚀</button>
     </form>
-  </div>
-</section>
+  </section>
 
-
-  <!-- ========= Footer ========= -->
   <footer>
-    © <span id="year"></span> Piyush Prajapati. All rights reserved.
+    <p>© 2025 Priyanshi Gautam | Data Analytics & Testing Enthusiast</p>
   </footer>
 
-  <!-- ========= Scripts ========= -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ duration: 1200, once: true });</script>
+
+  <!-- EmailJS -->
   <script>
-    AOS.init({ once:true, duration:800 });
-
-    new Typed('.typed-text',{
-      strings:['Flutter Developer','Full‑Stack Dev','Freelancer','Tech Enthusiast'],
-      typeSpeed:60,backSpeed:30,backDelay:2000,loop:true
-    });
-
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    /* === WhatsApp integration === */
-    document.getElementById('contactForm').addEventListener('submit',function(e){
+    (function(){ emailjs.init("5bUKpnL53r4Npm3aR"); })();
+    document.getElementById("contact-form").addEventListener("submit", function(e) {
       e.preventDefault();
-      const name    = encodeURIComponent(this.name.value.trim());
-      const email   = encodeURIComponent(this.email.value.trim());
-      const message = encodeURIComponent(this.msg.value.trim());
-
-      /* Your WhatsApp number with country code (no + or spaces) */
-      const phone = '919549348495';
-
-      const url = `https://wa.me/${phone}?text=` +
-                  `Hello%20Piyush%2C%0A`+
-                  `Name%3A%20${name}%0A`+
-                  `Email%3A%20${email}%0A`+
-                  `Message%3A%20${message}`;
-      window.open(url,'_blank');
-      this.reset();
+      emailjs.send("service_4uwqhsl", "template_nypl0pp", {
+        from_name: document.getElementById("name").value,
+        from_email: document.getElementById("email").value,
+        message: document.getElementById("message").value
+      }).then(() => {
+        alert("✅ Message Sent Successfully!");
+        e.target.reset();
+      }, () => {
+        alert("❌ Failed to send message. Try again later.");
+      });
     });
   </script>
 </body>
